@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KHAN'S FOOD - Order Delicious Food Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>KHAN'S FOOD</span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="search-btn" onclick="openSearchModal()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="menu-toggle" onclick="toggleMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Rated 4.9/5 by 5000+ customers</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Delicious Food<br>
+                        <span class="hero-highlight">Delivered Fast</span>
+                    </h1>
+                    <p class="hero-subtitle">Experience authentic Indian & British cuisine from the comfort of your home. Fresh ingredients, amazing taste!</p>
+                    <div class="hero-features">
+                        <div class="hero-feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span>30 min delivery</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Safe & Hygienic</span>
+                        </div>
+                        <div class="hero-feature-item">
+                            <i class="fas fa-percent"></i>
+                            <span>Best Offers</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" onclick="scrollToMenu()">
+                            <i class="fas fa-shopping-bag"></i> Order Now
+                        </button>
+                        <button class="btn btn-outline-white btn-large" onclick="scrollToSection('about')">
+                            <i class="fas fa-play-circle"></i> How It Works
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Menu Items</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>4.9★</h3>
+                            <p>Average Rating</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg" alt="Food 1" class="floating-image img-1">
+                        <img src="https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg" alt="Food 2" class="floating-image img-2">
+                        <img src="https://www.themealdb.com/images/media/meals/rvypwy1503069308.jpg" alt="Food 3" class="floating-image img-3">
+                        <div class="hero-card card-1">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Fast Delivery</h4>
+                                <p>In 30 minutes</p>
+                            </div>
+                        </div>
+                        <div class="hero-card card-2">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <h4>Fresh Food</h4>
+                                <p>Quality guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-text">
+                    <i class="fas fa-gift"></i>
+                    <span><strong>Special Offer!</strong> Get 20% off on your first order. Use code: <strong>FIRST20</strong></span>
+                </div>
+                <button class="btn btn-primary" onclick="scrollToMenu()">Order Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fast Delivery</h3>
+                    <p>Get your food delivered in 30 minutes or less</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Quality Food</h3>
+                    <p>Fresh ingredients and authentic recipes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Easy Payment</h3>
+                    <p>Multiple payment options available</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>We're here to help anytime you need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <p>Choose from our delicious selection of Indian and British cuisine</p>
+            </div>
+
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterMenu('all')">All</button>
+                <button class="filter-btn" onclick="filterMenu('indian')">Indian</button>
+                <button class="filter-btn" onclick="filterMenu('british')">British</button>
+                <button class="filter-btn" onclick="filterMenu('desserts')">Desserts</button>
+                <button class="filter-btn" onclick="filterMenu('drinks')">Drinks</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Items will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&h=400&fit=crop" alt="Restaurant Food" style="border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <div class="about-content">
+                    <h2>About KHAN'S FOOD</h2>
+                    <p>Welcome to KHAN'S FOOD, where we bring together the best of Indian and British cuisine. Our chefs use only the finest ingredients to create authentic, delicious meals that will transport your taste buds.</p>
+                    <p>With over 10 years of experience in the food industry, we pride ourselves on quality, taste, and customer satisfaction. Every dish is prepared with love and attention to detail.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50+</h3>
+                            <p>Menu Items</p>
+                        </div>
+                        <div class="stat">
+                            <h3>5000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for any queries or feedback</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Food Street, London, UK</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+44 20 1234 5678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@foodchow.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Mon - Sun: 10:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleContactForm(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" onclick="toggleCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">₹0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>KHAN'S FOOD</h4>
+                    <p>Bringing delicious food to your doorstep since 2014</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#" onclick="filterMenu('indian')">Indian Food</a></li>
+                        <li><a href="#" onclick="filterMenu('british')">British Food</a></li>
+                        <li><a href="#" onclick="filterMenu('desserts')">Desserts</a></li>
+                        <li><a href="#" onclick="filterMenu('drinks')">Drinks</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get special offers</p>
+                    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KHAN'S FOOD. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal" id="orderModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeOrderModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Confirmed!</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Order details will be inserted here -->
+            </div>
+            <button class="btn btn-primary" onclick="closeOrderModal()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="modal" id="searchModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeSearchModal()">&times;</span>
+            <h2>Search Menu</h2>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search for dishes..." oninput="searchMenu()">
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content payment-modal-content">
+            <span class="modal-close" onclick="closePaymentModal()">&times;</span>
+            
+            <!-- Payment Header -->
+            <div class="payment-header">
+                <div class="payment-step-indicator">
+                    <div class="step active" id="step1">
+                        <div class="step-number">1</div>
+                        <span>Order</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step active" id="step2">
+                        <div class="step-number">2</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="step-line"></div>
+                    <div class="step" id="step3">
+                        <div class="step-number">3</div>
+                        <span>Confirm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-body payment-body">
+                <!-- Left Side - Order Summary -->
+                <div class="payment-left">
+                    <div class="payment-summary-card">
+                        <h3><i class="fas fa-receipt"></i> Order Summary</h3>
+                        <div id="paymentOrderSummary" class="order-items-list"></div>
+                        
+                        <div class="promo-code-section">
+                            <input type="text" placeholder="Enter promo code" class="promo-input" id="promoInput">
+                            <button class="btn-apply-promo" onclick="applyPromo()">Apply</button>
+                        </div>
+                        
+                        <div class="payment-breakdown">
+                            <div class="breakdown-item">
+                                <span>Subtotal</span>
+                                <span id="subtotalAmount">₹0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Tax (10%)</span>
+                                <span id="taxAmount">₹0</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Delivery Fee</span>
+                                <span id="deliveryAmount">₹50</span>
+                            </div>
+                            <div class="breakdown-item discount" id="discountRow" style="display:none;">
+                                <span>Discount</span>
+                                <span id="discountAmount">-₹0</span>
+                            </div>
+                            <div class="breakdown-total">
+                                <span>Total Amount</span>
+                                <span id="totalAmount">₹0</span>
+                            </div>
+                        </div>
+
+                        <div class="secure-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Secure Payment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Payment Methods -->
+                <div class="payment-right">
+                    <h3 class="payment-section-title">Choose Payment Method</h3>
+                    
+                    <div class="payment-methods-professional">
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="card" checked onchange="showPaymentForm('card')">
+                            <div class="payment-option-content">
+                                <div class="payment-option-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="payment-option-info">
+                                    <h4>Credit/Debit Card</h4>
+                                    <p>Visa, Mastercard, Amex</p>
+                                </div>
+                                <div class="payment-option-check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="upi" onchange="showPaymentForm('upi')">
+                            <div class="payment-option-content">
+                                <div class="payment-option-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="payment-option-info">
+                                    <h4>UPI Payment</h4>
+                                    <p>Google Pay, PhonePe, Paytm</p>
+                                </div>
+                                <div class="payment-option-check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="wallet" onchange="showPaymentForm('wallet')">
+                            <div class="payment-option-content">
+                                <div class="payment-option-icon">
+                                    <i class="fas fa-wallet"></i>
+                                </div>
+                                <div class="payment-option-info">
+                                    <h4>Digital Wallet</h4>
+                                    <p>Amazon Pay, PayPal</p>
+                                </div>
+                                <div class="payment-option-check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option">
+                            <input type="radio" name="paymentMethod" value="cod" onchange="showPaymentForm('cod')">
+                            <div class="payment-option-content">
+                                <div class="payment-option-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="payment-option-info">
+                                    <h4>Cash on Delivery</h4>
+                                    <p>Pay when you receive</p>
+                                </div>
+                                <div class="payment-option-check">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- Card Payment Form -->
+                    <div id="cardForm" class="payment-form-section">
+                        <h4 class="form-title">Enter Card Details</h4>
+                        <div class="card-input-group">
+                            <label>Card Number</label>
+                            <div class="input-with-icon">
+                                <input type="text" placeholder="1234 5678 9012 3456" class="payment-input-pro" id="cardNumber" maxlength="19">
+                                <div class="card-brands">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-input-row-pro">
+                            <div class="card-input-group">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" class="payment-input-pro" maxlength="5">
+                            </div>
+                            <div class="card-input-group">
+                                <label>CVV</label>
+                                <input type="password" placeholder="123" class="payment-input-pro" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="card-input-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" placeholder="John Doe" class="payment-input-pro">
+                        </div>
+                        <div class="save-card-option">
+                            <input type="checkbox" id="saveCard">
+                            <label for="saveCard">Save card for future payments</label>
+                        </div>
+                    </div>
+
+                    <!-- UPI Form -->
+                    <div id="upiForm" class="payment-form-section" style="display:none;">
+                        <h4 class="form-title">Enter UPI ID</h4>
+                        <div class="card-input-group">
+                            <label>UPI ID</label>
+                            <input type="text" placeholder="yourname@upi" class="payment-input-pro">
+                        </div>
+                        <div class="upi-apps">
+                            <button class="upi-app-btn"><i class="fab fa-google-pay"></i> GPay</button>
+                            <button class="upi-app-btn"><i class="fas fa-mobile"></i> PhonePe</button>
+                            <button class="upi-app-btn"><i class="fas fa-wallet"></i> Paytm</button>
+                        </div>
+                    </div>
+
+                    <!-- Wallet Form -->
+                    <div id="walletForm" class="payment-form-section" style="display:none;">
+                        <h4 class="form-title">Select Wallet</h4>
+                        <div class="wallet-options">
+                            <button class="wallet-btn"><i class="fab fa-amazon-pay"></i> Amazon Pay</button>
+                            <button class="wallet-btn"><i class="fab fa-paypal"></i> PayPal</button>
+                        </div>
+                    </div>
+
+                    <!-- COD Message -->
+                    <div id="codForm" class="payment-form-section" style="display:none;">
+                        <div class="cod-message">
+                            <i class="fas fa-info-circle"></i>
+                            <p>You will pay <strong id="codAmount">₹0</strong> in cash when your order is delivered.</p>
+                        </div>
+                    </div>
+
+                    <button class="btn-pay-now" onclick="processPayment()">
+                        <i class="fas fa-lock"></i>
+                        <span>Pay Now</span>
+                        <span id="payButtonAmount">₹0</span>
+                    </button>
+
+                    <div class="payment-security-info">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Your payment information is encrypted and secure</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Tracking Modal -->
+    <div class="modal" id="trackingModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeTrackingModal()">&times;</span>
+            <div class="modal-header">
+                <i class="fas fa-map-marker-alt"></i>
+                <h2>Track Your Order</h2>
+            </div>
+            <div class="modal-body">
+                <div class="tracking-info">
+                    <div class="tracking-header">
+                        <h3>Order #<span id="trackingOrderNumber"></span></h3>
+                        <span class="tracking-status" id="trackingStatus">Preparing</span>
+                    </div>
+                    
+                    <div class="tracking-timeline">
+                        <div class="timeline-item active" id="timeline-placed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Order Placed</h4>
+                                <p id="time-placed">Just now</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" id="timeline-confirmed">
+                            <div class="timeline-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Order Confirmed</h4>
+                                <p id="time-confirmed">Pending</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" id="timeline-preparing">
+                            <div class="timeline-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Preparing Food</h4>
+                                <p id="time-preparing">Pending</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" id="timeline-outfordelivery">
+                            <div class="timeline-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Out for Delivery</h4>
+                                <p id="time-outfordelivery">Pending</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" id="timeline-delivered">
+                            <div class="timeline-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Delivered</h4>
+                                <p id="time-delivered">Pending</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="estimated-time">
+                        <i class="fas fa-clock"></i>
+                        <span>Estimated Delivery: <strong id="estimatedTime">30-45 minutes</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- My Orders Button (Floating) -->
+    <button class="my-orders-btn" onclick="showMyOrders()" title="My Orders">
+        <i class="fas fa-receipt"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
